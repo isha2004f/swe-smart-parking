@@ -1,0 +1,28 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.userRouter = void 0;
+const express_1 = __importDefault(require("express"));
+const userContoller_1 = __importDefault(require("../controller/userContoller"));
+const router = express_1.default.Router();
+exports.userRouter = router;
+router.post("/UserID", userContoller_1.default.E_AddNewUser);
+router.get("/UserID", userContoller_1.default.E_GetUserID);
+router.delete("/UserID", userContoller_1.default.E_DeleteUser);
+router.post("/UserInfo", userContoller_1.default.E_AddUserInfo);
+router.get("/UserInfo", userContoller_1.default.E_GetUserInfo);
+router.get("/UserInfo/Email", userContoller_1.default.E_GetUserEmail);
+router.put("/UserInfo", userContoller_1.default.E_UpdateUserInfo);
+router.post("/OpenTicket", userContoller_1.default.E_CreateOpenTicket);
+router.get("/OpenTicket/UserID", userContoller_1.default.E_GetOpenTicketByUserID);
+router.get("/OpenTicket/TicketID", userContoller_1.default.E_GetOpenTicketByTicketID);
+router.put("/OpenTicket", userContoller_1.default.E_UpdateOpenTicketEndTime);
+router.post("/ClosedTicket", userContoller_1.default.E_ClosedTicket);
+router.get("/ClosedTickets", userContoller_1.default.E_GetClosedTicketsByUserID);
+router.get("/ClosedTicket", userContoller_1.default.E_GetClosedTicket);
+router.post("/UserClosedTicket", userContoller_1.default.E_CreateUserClosedTicket);
+router.get("/UserClosedTicket", userContoller_1.default.E_GetUserClosedTicket);
+router.get("/CarparkAddress", userContoller_1.default.E_GetCarparkAddress);
+router.get("/Rate", userContoller_1.default.E_GetRate);
